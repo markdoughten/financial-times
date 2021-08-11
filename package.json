@@ -8,5 +8,8 @@
     "express-session": "^1.11.3",
     "mysql": "^2.8.0",
     "cors": "^2.8.5"
-  }
+  },
+  "scripts": {
+    "start" : "node app.js"
+ }
 }

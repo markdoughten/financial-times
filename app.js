@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 26664);
+const port = process.env.PORT || 4000;
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,6 +49,4 @@ app.use(function(err, req, res, next){
   res.render('500');
 });
 
-app.listen(app.get('port'), function(){
-  console.log('Located http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
-});
+app.listen(port);
