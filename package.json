@@ -13,9 +13,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
     "express-session": "^1.11.3",
-    "mysql": "^2.8.0"
-  },
-  "devDependencies": {
+    "mysql": "^2.8.0",
     "cors": "^2.8.5"
   }
 }
