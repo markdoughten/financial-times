@@ -2,8 +2,10 @@ var express = require('express');
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var bodyParser = require('body-parser');
 var path = require('path')
+var cors = require('cors')
 var app = express();
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
