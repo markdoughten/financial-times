@@ -9,16 +9,12 @@
     font-weight: bold;
 }
 body {
-    height: 125vh;
     background-size: cover;
     font-family: sans-serif;
-    margin-top: 50px;
-    padding: 30px;
 }
 
 header {
     background-color: whitesmoke;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -85,30 +81,34 @@ textarea{
 }
 
 .text {
-  color: white;
-  font-size: 20px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.input {
-    padding: 5px;
-}
-
-.calculator {
+    color: white;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
     text-align: center;
+    font-family: sans-serif;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+
+.treasury-rates {
+    border: 2px solid black;
 }
 
-.defintion{
-    padding-top: 5px;
+#col-1 {
+  position: relative;
+  width: 50%;
+  float: left;
+  height: 100%;
+  z-index: 1010101010
 }
+
+#col-2 {
+  position: relative;
+  width: 50%;
+  float: left;
+  height: 100%;
+  z-index: 1010101010
+}
+

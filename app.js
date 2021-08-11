@@ -19,23 +19,20 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-app.get('/interest-rates',function(req,res){
-  res.render('interest-rates');
+app.get('/treasury-rates', function (req, res) {
+  res.render('treasury-rates');
 });
 
-app.get('/tvm-calculator',function(req,res){
-  res.render('tvm-calculator');
-});
-
-app.get('/unit-converter-test',function(req,res){
-  res.render('unit-converter');
+app.get('/stocks',function(req,res){
+  res.render('stocks');
 });
 
 app.post('/unit-converter',function(req,res){
-  let data = Number(req.body.weight);
-  data = data/28.30
-  data = JSON.stringify(data)
-  res.sendStatus(data);
+  const data = req.body;
+  for(var i = 0; i < data.length; i++){
+    data[i] = (data[i]/28.35).toFixed(2)
+  }
+  res.send(data);
 });
 
 app.use(function(req,res){
