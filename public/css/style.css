@@ -1,20 +1,11 @@
-.scrollbox {
-    height:150px;
-    width:450px;
-    border:1px solid #ccc;
-    overflow:auto;
-    padding:5px;
-}
-.term{
-    font-weight: bold;
-}
+
 body {
     background-size: cover;
     font-family: sans-serif;
 }
 
 header {
-    background-color: lightblue;
+    background-color: whitesmoke;
     top: 0;
     left: 0;
     right: 0;
@@ -94,12 +85,12 @@ textarea{
 }
 
 /*Source: https://www.lifewire.com/light-blue-design-colors-1077399*/
-.stock-data-head-1, .stock-data-head-2, .treasury-rates-head {
-    background-color: lightgray;
+.stock-data-head-1, .stock-data-head-2, .treasury-rates-head, .example-head {
+    background-color: whitesmoke;
 }
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse*/
-.treasury-rates, .stock-data-1, .stock-data-2, .stock-data-row {
+.treasury-rates, .stock-data-1, .stock-data-2, .stock-data-row, .example-row, .stock-examples, .example-head-row {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -116,4 +107,9 @@ form {
     padding-bottom: 15px;
     padding-right: 10px;
     display: inline-block;
+}
+
+/*Source https://developer.mozilla.org/en-US/docs/Web/CSS/cursor*/
+.button {
+    cursor: pointer;
 }

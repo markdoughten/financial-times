@@ -1,12 +1,54 @@
 <title>Compare Stocks</title>
 <h1>Compare Stocks</h1>
+<div class="examples">
+    <table class="stock-examples">
+        <thead class="example-head">
+        <tr>
+            <td class="example-head-row">
+                Company
+            </td>
+            <td class="example-head-row">
+                Symbol
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="example-row">
+                Amazon.com Inc.
+            </td>
+            <td class="example-row">
+                AMZN
+            </td>
+        </tr>
+        <tr>
+            <td class="example-row">
+                Bank of America
+            </td>
+            <td class="example-row">
+                BAC
+            </td>
+        </tr>
+        <tr>
+            <td class="example-row">
+                Coca-Cola Bottling Co.
+            </td>
+            <td class="example-row">
+                COKE
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3>Instructions: Use the below forms to enter a company's
+    symbol and see basic description and financial information.</h3>
 <div id="col-1">
   <form id='stocks-1' method="get" action="https://www.alphavantage.co/query?">
         <input type="text" name="function" value="OVERVIEW" hidden/>
         <label class="stock-1">Symbol:</label>
-        <input type="text" name="symbol" id="symbol" value="F"/>
+        <input type="text" name="symbol" id="symbol" onblur="this.value=removeSpaces(this.value)" value="F"/>
         <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
-        <input type="submit" value="Go">
+        <input class="button" type="submit" value="Go">
   </form>
   <table class="stock-data-1">
       <thead class='stock-data-head-1'></thead>
@@ -17,9 +59,9 @@
   <form id='stocks-2' method="get" action="https://www.alphavantage.co/query?">
         <input type="text" name="function" value="OVERVIEW" hidden/>
         <label class="stock-2">Symbol:</label>
-        <input type="text" name="symbol" id="symbol" value="CHD"/>
+        <input type="text" name="symbol" id="symbol" onblur="this.value=removeSpaces(this.value)" value="CHD"/>
         <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
-        <input type="submit" value="Go">
+        <input class="button" type="submit" value="Go">
   </form>
   <table class="stock-data-2">
       <thead class='stock-data-head-2'></thead>
