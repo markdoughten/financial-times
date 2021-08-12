@@ -3,6 +3,11 @@
 // https://stackoverflow.com/questions/2620181/clear-table-jquery
 // https://www.w3schools.com/js/js_if_else.asp
 
+//Remove extra spaces from the stock forms
+function removeSpaces(string) {
+ return string.split(' ').join('');
+}
+
 // Construct the table data based on the stock information, id attribute to identify right or left
 function makeBody(data, keys, id) {
     if(id === 1){
