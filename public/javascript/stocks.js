@@ -9,8 +9,8 @@ function removeSpaces(string) {
 }
 
 // Construct the table data based on the stock information, id attribute to identify right or left
-function makeBody(stocks, keys, id) {
-    if(id === 1){
+function makeBody(stocks, keys, body) {
+    if(body === 1){
     clearTable(1)
     const row = $("<tr class='stocks'>");
     $(".stock-data-head-1").append(row);
