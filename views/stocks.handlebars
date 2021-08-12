@@ -1,7 +1,29 @@
-<h1>Stock Comparison</h1>
+<title>Compare Stocks</title>
+<h1>Compare Stocks</h1>
 <div id="col-1">
-  <h1>This is half of a page</h1>
+  <form id='stocks-1' method="get" action="https://www.alphavantage.co/query?">
+        <input type="text" name="function" value="OVERVIEW" hidden/>
+        <label class="stock-1">Symbol:</label>
+        <input type="text" name="symbol" id="symbol" value="F"/>
+        <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
+        <input type="submit" value="Go">
+  </form>
+  <table class="stock-data-1">
+      <thead class='stock-data-head-1'></thead>
+      <tbody class='stock-data-body-1'></tbody>
+  </table>
 </div>
 <div id="col-2">
-  <h1>This is another half of a page</h1>
+  <form id='stocks-2' method="get" action="https://www.alphavantage.co/query?">
+        <input type="text" name="function" value="OVERVIEW" hidden/>
+        <label class="stock-2">Symbol:</label>
+        <input type="text" name="symbol" id="symbol" value="CHD"/>
+        <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
+        <input type="submit" value="Go">
+  </form>
+  <table class="stock-data-2">
+      <thead class='stock-data-head-2'></thead>
+      <tbody class='stock-data-body-2'></tbody>
+  </table>
 </div>
+<script src='javascript/stocks.js'></script>

@@ -1,3 +1,4 @@
+//Construct the header for the treasury rate table
 function makeHeader(data, keys) {
         const row = $("<tr class='dates'>");
         if (data !== 0) {
@@ -8,6 +9,7 @@ function makeHeader(data, keys) {
     }
 }
 
+//Construct the body for the treasury rate table
 function makeBody(data, keys) {
             var dateKeys = Object.keys(data.data.Date[keys[0]]);
             for(var j = 0; j < dateKeys.length; j++) {
@@ -34,7 +36,7 @@ $( document ).ready(function(){
                 makeBody(data, keys);
             }
         },
-        error: function (xhr, ajaxOptions, thrownError) {
+        error: function (xhr) {
             var errorMsg = 'Ajax request failed: ' + xhr.responseText;
             $('#content').html(errorMsg);
           }

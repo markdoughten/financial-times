@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: whitesmoke;
+    background-color: lightblue;
     top: 0;
     left: 0;
     right: 0;
@@ -38,6 +38,8 @@ header li a {
     text-decoration: none;
 }
 
+
+/* https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp */
 textarea{
     font-family: sans-serif;
     height: 80px;
@@ -91,24 +93,27 @@ textarea{
     font-family: sans-serif;
 }
 
-
-.treasury-rates {
-    border: 2px solid black;
+/*Source: https://www.lifewire.com/light-blue-design-colors-1077399*/
+.stock-data-head-1, .stock-data-head-2, .treasury-rates-head {
+    background-color: lightgray;
 }
 
-#col-1 {
-  position: relative;
-  width: 50%;
-  float: left;
-  height: 100%;
-  z-index: 1010101010
+/* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse*/
+.treasury-rates, .stock-data-1, .stock-data-2, .stock-data-row {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
-#col-2 {
-  position: relative;
-  width: 50%;
-  float: left;
-  height: 100%;
-  z-index: 1010101010
+#col-1, #col-2 {
+    width: 48.5%;
+    float: left;
+    padding: 10px;
+    align-content: center;
+
 }
 
+form {
+    padding-bottom: 15px;
+    padding-right: 10px;
+    display: inline-block;
+}

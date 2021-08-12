@@ -1,3 +1,5 @@
+//Source: https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp
+
 var slideIndex = 1;
 var timer;
 
@@ -10,7 +12,7 @@ window.addEventListener("load",function() {
   }, 4000);
 })
 
-// Next/previous controls
+// Next previous controls
 function moveSlides(n) {
   clearInterval(timer)
   displaySlides(slideIndex += n);
