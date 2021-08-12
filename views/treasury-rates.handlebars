@@ -1,14 +1,28 @@
 <title>Treasury Rates</title>
 <html>
-    <h1>Treasury Rates</h1>
+    <h1>Daily Treasury Yield Curve Rates</h1>
     <body>
         <!-- Content is blank by default -->
         <div id="content"></div>
+        <div class ="treasury-bullets">
+            <ul>
+              <li>The Treasury yield is the interest rate that the U.S. government
+                  pays to borrow money.</li>
+              <li>A longer-term Treasury security usually has a higher yield than shorter-term Treasury security.</li>
+              <li>Treasury yields show how investors feel about the U.S. economy;
+                  the higher the yields on long-term securities, the more optimistic their outlook.</li>
+            </ul>
+            <label><a href=https://www.investopedia.com/terms/t/treasury-yield.asp target="_blank">Source: investopedia.com</a></label>
+        </div>
         <!-- Request to Scott's API for Treasury Rate data-->
         <table class="treasury-rates">
             <thead class="treasury-rates-head"></thead>
             <tbody class="treasury-rates-body"></tbody>
         </table>
         <script src="javascript/treasury-rates.js"></script>
+        <div class="link">
+            <label><a href=https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield
+                  target="_blank">Source: treasury.gov</a></label>
+        </div>
     </body>
 </html>

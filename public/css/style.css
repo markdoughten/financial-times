@@ -113,3 +113,11 @@ form {
 .button, .clear-1, .clear-2 {
     cursor: pointer;
 }
+
+.treasury-bullets {
+    padding-bottom: 10px;
+}
+
+.link{
+    padding-top: 10px;
+}
