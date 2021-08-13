@@ -85,15 +85,16 @@ textarea{
 }
 
 /*Source: https://www.lifewire.com/light-blue-design-colors-1077399*/
-.stock-data-head-1, .stock-data-head-2, .treasury-rates-head, .example-head {
-    background-color: whitesmoke;
+.company-data-head-1, .company-data-head-2, .treasury-rates-head, .example-head, .even-example-row, .even-company {
+    background-color: lightblue;
 }
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse*/
-.treasury-rates, .stock-data-1, .stock-data-2, .stock-data-row, .example-row, .stock-examples, .example-head-row {
+.treasury-rates {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 
 #col-1, #col-2 {
     width: 48.5%;

@@ -3,38 +3,53 @@
 // https://stackoverflow.com/questions/2620181/clear-table-jquery
 // https://www.w3schools.com/js/js_if_else.asp
 
-//Remove extra spaces from the stock forms
+//Remove extra spaces from the company forms
 function removeSpaces(string) {
  return string.split(' ').join('');
 }
 
-// Construct the table data based on the stock information, id attribute to identify right or left
-function makeBody(stocks, keys, body) {
+// Construct the table data based on the company information, id attribute to identify right or left
+function makeBody(company, keys, body) {
     if(body === 1){
     clearTable(1)
-    const row = $("<tr class='stocks'>");
-    $(".stock-data-head-1").append(row);
-    appendRow(keys[0], stocks[keys[0]], row)
+    const row = $("<tr class='company'>");
+    $(".company-data-head-1").append(row);
+    appendRow(keys[0], company[keys[0]], row)
     for(var j = 1; j < keys.length; j++) {
-        const row = $("<tr class='stocks'>");
-        $(".stock-data-body-1").append(row);
-        appendRow(keys[j], stocks[keys[j]], row)
-    }
-} else {
+        if (j % 2 === 0){
+            const row = $("<tr class='even-company'>");
+            $(".company-data-body-1").append(row);
+            appendRow(keys[j], company[keys[j]], row)}
+        else {
+            const row = $("<tr class='odd-company'>");
+            $(".company-data-body-1").append(row);
+            appendRow(keys[j], company[keys[j]], row)}
+            }
+        }
+     else {
     clearTable(2)
-    const row = $("<tr class='stocks'>");
-    $(".stock-data-head-2").append(row);
-    appendRow(keys[0], stocks[keys[0]], row)
+    const row = $("<tr class='company'>");
+    $(".company-data-head-2").append(row);
+    appendRow(keys[0], company[keys[0]], row)
     for(var j = 1; j < keys.length; j++) {
-        const row = $("<tr class='stocks'>");
-        $(".stock-data-body-2").append(row);
-        appendRow(keys[j], stocks[keys[j]], row)
+        if (j % 2 === 0){
+            const row = $("<tr class='even-company'>");
+            $(".company-data-body-2").append(row);
+            appendRow(keys[j], company[keys[j]], row)
+        }
+        else{
+            const row = $("<tr class='odd-company'>");
+            $(".company-data-body-2").append(row);
+            appendRow(keys[j], company[keys[j]], row)
+
+        }
+
     }
     }
 }
 
-//Ajax call for the left stock form
-$( "#stocks-1" ).submit(function(event) {
+//Ajax call for the left company form
+$( "#company-1" ).submit(function(event) {
   event.preventDefault();
   let getUrl = $(this).attr("action");
   let requestMethod = $(this).attr("method");
@@ -44,7 +59,6 @@ $( "#stocks-1" ).submit(function(event) {
         type: requestMethod,
         success: function(data){
             const keys = Object.keys(data)
-            //console.log(keys)
             if (keys.length !== 0) {
                 makeBody(data, keys, 1);
             }
@@ -60,8 +74,8 @@ $( "#stocks-1" ).submit(function(event) {
     });
 });
 
-//Ajax call for the left stock form
-    $("#stocks-2").submit(function (event) {
+//Ajax call for the left company form
+    $("#company-2").submit(function (event) {
         event.preventDefault();
         let getUrl = $(this).attr("action");
         let requestMethod = $(this).attr("method");
@@ -86,29 +100,29 @@ $( "#stocks-1" ).submit(function(event) {
     });
 
     function appendRow(key, data, row) {
-        row.append($("<td class='stock-data-row'>" + key + "</td>"));
-        row.append($("<td class='stock-data-row'>" + data + "</td>"));
+        row.append($("<td class='company-data-row'>" + key + "</td>"));
+        row.append($("<td class='company-data-row'>" + data + "</td>"));
     }
 
     function errorDetected(body) {
         if (body === 1) {
             const row = $("<tr class='error'>");
-            $(".stock-data-head-1").append(row);
-            row.append($("<td class='error'>Stock not found. Please try again!</td>"));
+            $(".company-data-head-1").append(row);
+            row.append($("<td class='error'>Company not found. Please try again!</td>"));
         } else {
             const row = $("<tr class='error'>");
-            $(".stock-data-head-2").append(row);
-            row.append($("<td class='error'>Stock not found. Please try again!</td>"));
+            $(".company-data-head-2").append(row);
+            row.append($("<td class='error'>Company not found. Please try again!</td>"));
         }
     }
 
     function clearTable(body) {
         if (body === 1) {
-            $(".stock-data-head-1 tr").remove();
-            $(".stock-data-body-1 tr").remove();
+            $(".company-data-head-1 tr").remove();
+            $(".company-data-body-1 tr").remove();
         } else {
-            $(".stock-data-head-2 tr").remove();
-            $(".stock-data-body-2 tr").remove();
+            $(".company-data-head-2 tr").remove();
+            $(".company-data-body-2 tr").remove();
         }
     }
 

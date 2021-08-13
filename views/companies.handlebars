@@ -1,7 +1,7 @@
-<title>Compare Stocks</title>
-<h1>Compare Stocks</h1>
+<title>Public Companies</title>
+<h1>Compare Public Companies</h1>
 <div class="examples">
-    <table class="stock-examples">
+    <table class="company-examples">
         <thead class="example-head">
         <tr>
             <td class="example-head-row">
@@ -22,10 +22,10 @@
             </td>
         </tr>
         <tr>
-            <td class="example-row">
+            <td class="even-example-row">
                 Bank of America
             </td>
-            <td class="example-row">
+            <td class="even-example-row">
                 BAC
             </td>
         </tr>
@@ -43,31 +43,31 @@
 <h3>Instructions: Use the below forms to enter a company's
     symbol and see basic description and financial information.</h3>
 <div id="col-1">
-  <form id='stocks-1' method="get" action="https://www.alphavantage.co/query?">
+  <form id='company-1' method="get" action="https://www.alphavantage.co/query?">
         <input type="text" name="function" value="OVERVIEW" hidden/>
-        <label class="stock-1">Symbol:</label>
+        <label class="company-1">Symbol:</label>
         <input type="text" name="symbol" id="symbol" onblur="this.value=removeSpaces(this.value)" value="F"/>
         <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
         <input class="button" type="submit" value="Go">
   </form>
         <button class="clear-1" onclick="clearTable(1)">Clear</button>
-  <table class="stock-data-1">
-      <thead class='stock-data-head-1'></thead>
-      <tbody class='stock-data-body-1'></tbody>
+  <table class="company-data-1">
+      <thead class='company-data-head-1'></thead>
+      <tbody class='company-data-body-1'></tbody>
   </table>
 </div>
 <div id="col-2">
-  <form id='stocks-2' method="get" action="https://www.alphavantage.co/query?">
+  <form id='company-2' method="get" action="https://www.alphavantage.co/query?">
         <input type="text" name="function" value="OVERVIEW" hidden/>
-        <label class="stock-2">Symbol:</label>
+        <label class="company-2">Symbol:</label>
         <input type="text" name="symbol" id="symbol" onblur="this.value=removeSpaces(this.value)" value="CHD"/>
         <input type="text" name="apikey" value="HT44FL6LGP8V92HY" hidden/>
         <input class="button" type="submit" value="Go">
   </form>
         <button class="clear-2" onclick="clearTable(2)">Clear</button>
-  <table class="stock-data-2">
-      <thead class='stock-data-head-2'></thead>
-      <tbody class='stock-data-body-2'></tbody>
+  <table class="company-data-2">
+      <thead class='company-data-head-2'></thead>
+      <tbody class='company-data-body-2'></tbody>
   </table>
 </div>
-<script src='javascript/stocks.js'></script>
+<script src='javascript/company.js'></script>

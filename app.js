@@ -25,8 +25,8 @@ app.get('/treasury-rates', function (req, res) {
   res.render('treasury-rates');
 });
 
-app.get('/stocks',function(req,res){
-  res.render('stocks');
+app.get('/companies',function(req,res){
+  res.render('companies');
 });
 
 app.post('/unit-converter',function(req,res){
