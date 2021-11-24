@@ -99,8 +99,22 @@ $( "#company-1" ).submit(function(event) {
         });
     });
 
+
+
     function appendRow(key, data, row) {
+
+        var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+
+        });
+
         row.append($("<td class='company-data-row'>" + key + "</td>"));
+        let financials = ['EBITDA','MarketCapitalization','RevenueTTM','GrossProfitTTM', 'SharesOutstanding'];
+        if(financials.includes(key)) {
+            data = formatter.format((data/1000)) + "M";
+        }
         row.append($("<td class='company-data-row'>" + data + "</td>"));
     }
 
