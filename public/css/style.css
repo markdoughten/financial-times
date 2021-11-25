@@ -6,10 +6,6 @@ body {
 
 header {
     background-color: whitesmoke;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
     height: 75px;
     display: flex;
     align-items: center;
@@ -110,7 +106,7 @@ textarea{
 #col-1, #col-2 {
     width: 48.5%;
     float: left;
-    padding: 10px;
+    padding-right: 10px;
     align-content: center;
 
 }
