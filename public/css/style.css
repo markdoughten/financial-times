@@ -95,15 +95,17 @@ textarea{
 
 .grid {
     text-align: center;
+
 }
 
+.space {
+    padding-right: 40px;
+}
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse*/
 .treasury-rates {
     border-collapse: collapse;
 }
-
-
 
 #col-1, #col-2 {
     width: 48.5%;
@@ -134,8 +136,7 @@ form {
 
 .category, th {
     display: table-cell;
-    vertical-align: inherit;
     font-weight: Bold;
     background-color: white;
-    padding: 3px;
+    padding-right: 5px;
 }

@@ -8,9 +8,12 @@ function makeHeader(data, keys) {
         let years = ["1 yr", "2 yr","3 yr","3 yr","5 yr","7 yr"];
         for(var i = 0; i < dateKeys.length; i++) {
             if(years.includes(dateKeys[i])) {
-            dateKeys[i] = dateKeys[i]+" ";
+                row.append($("<th class ='year'>" + dateKeys[i] + "</th>"));
+                row.append($("<th class='space'></th>"));
+            } else {
+                row.append($("<th>" + dateKeys[i] + "</th>"));
+                row.append($("<th class='space'></th>"));
             }
-            row.append($("<th>" + dateKeys[i] + "</th>"));
         }
     }
 }
@@ -25,6 +28,7 @@ function makeBody(data, keys) {
                     for (var x = 0; x < dateKeys.length; x++) {
                         $(".treasury-rates-body").append(row);
                         row.append($("<td class='grid'>" + data.data.Date[keys[j]][dateKeys[x]] + "</td>"));
+                        row.append($("<td class='space'></td>"));
                 }
                 } else {
                     const row = $("<tr class='odd-rates'>");
@@ -32,6 +36,7 @@ function makeBody(data, keys) {
                     for (var x = 0; x < dateKeys.length; x++) {
                         $(".treasury-rates-body").append(row);
                         row.append($("<td class='grid'>" + data.data.Date[keys[j]][dateKeys[x]] + "</td>"));
+                        row.append($("<td class='space'></td>"));
                 }
 
                 }
