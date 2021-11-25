@@ -5,7 +5,7 @@ function makeHeader(data, keys) {
         if (data !== 0) {
         $(".treasury-rates-head").append(row);
         row.append($("<th></th>"));
-        let years = ["1 yr", "2 yr","3 yr","3 yr","5 yr","7 yr"];
+        const years = ["1 yr", "2 yr","3 yr","3 yr","5 yr","7 yr"];
         for(var i = 0; i < dateKeys.length; i++) {
             if(years.includes(dateKeys[i])) {
                 row.append($("<th class ='year'>" + dateKeys[i] + "</th>"));

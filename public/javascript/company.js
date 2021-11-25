@@ -51,9 +51,9 @@ function makeBody(company, keys, body) {
 //Ajax call for the left company form
 $( "#company-1" ).submit(function(event) {
   event.preventDefault();
-  let getUrl = $(this).attr("action");
-  let requestMethod = $(this).attr("method");
-  let formValues = $(this).serialize();
+  const getUrl = $(this).attr("action");
+  const requestMethod = $(this).attr("method");
+  const formValues = $(this).serialize();
       $.ajax({
         url: getUrl + formValues,
         type: requestMethod,
@@ -77,9 +77,9 @@ $( "#company-1" ).submit(function(event) {
 //Ajax call for the left company form
     $("#company-2").submit(function (event) {
         event.preventDefault();
-        let getUrl = $(this).attr("action");
-        let requestMethod = $(this).attr("method");
-        let formValues = $(this).serialize();
+        const getUrl = $(this).attr("action");
+        const requestMethod = $(this).attr("method");
+        const formValues = $(this).serialize();
         $.ajax({
             url: getUrl + formValues,
             type: requestMethod,
@@ -111,7 +111,7 @@ $( "#company-1" ).submit(function(event) {
         });
 
         row.append($("<td class='company-data-row'>" + key + "</td>"));
-        let financials = ['EBITDA','MarketCapitalization','RevenueTTM','GrossProfitTTM', 'SharesOutstanding'];
+        const financials = ['EBITDA','MarketCapitalization','RevenueTTM','GrossProfitTTM', 'SharesOutstanding'];
         if(financials.includes(key)) {
             data = formatter.format((data/1000)) + "M";
         }
