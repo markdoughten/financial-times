@@ -1,10 +1,16 @@
 //Construct the header for the treasury rate table
 function makeHeader(data, keys) {
         const row = $("<tr class='dates'>");
+        var dateKeys = Object.keys(data.data.Date[keys[0]]);
         if (data !== 0) {
         $(".treasury-rates-head").append(row);
-        for(var i = 0; i < keys.length; i++) {
-            row.append($("<th colspan='2' style='border: 2px solid black; border-collapse:collapse'>" + keys[i] + "</th>"));
+        row.append($("<th></th>"));
+        let years = ["1 yr", "2 yr","3 yr","3 yr","5 yr","7 yr"];
+        for(var i = 0; i < dateKeys.length; i++) {
+            if(years.includes(dateKeys[i])) {
+            dateKeys[i] = dateKeys[i]+" ";
+            }
+            row.append($("<th>" + dateKeys[i] + "</th>"));
         }
     }
 }
@@ -12,12 +18,22 @@ function makeHeader(data, keys) {
 //Construct the body for the treasury rate table
 function makeBody(data, keys) {
             var dateKeys = Object.keys(data.data.Date[keys[0]]);
-            for(var j = 0; j < dateKeys.length; j++) {
-                const row = $("<tr class='rates'>");
-                for (var x = 0; x < keys.length; x++) {
-                    $(".treasury-rates-body").append(row);
-                    row.append($("<td>" + dateKeys[j] + "</td>"));
-                    row.append($("<td>" + data.data.Date[keys[x]][dateKeys[j]] + "</td>"));
+            for(var j = 0; j < keys.length; j++) {
+                if (j % 2 === 0) {
+                    const row = $("<tr class='even-rates'>");
+                    row.append($("<td class='category'>" + keys[j] + "</td>"));
+                    for (var x = 0; x < dateKeys.length; x++) {
+                        $(".treasury-rates-body").append(row);
+                        row.append($("<td class='grid'>" + data.data.Date[keys[j]][dateKeys[x]] + "</td>"));
+                }
+                } else {
+                    const row = $("<tr class='odd-rates'>");
+                    row.append($("<td class='category'>" + keys[j] + "</td>"));
+                    for (var x = 0; x < dateKeys.length; x++) {
+                        $(".treasury-rates-body").append(row);
+                        row.append($("<td class='grid'>" + data.data.Date[keys[j]][dateKeys[x]] + "</td>"));
+                }
+
                 }
             }
 }

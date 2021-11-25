@@ -85,7 +85,7 @@ textarea{
 }
 
 /*Source: https://www.lifewire.com/light-blue-design-colors-1077399*/
-.company-data-head-1, .company-data-head-2, .example-head, .even-example-row, .even-company {
+.company-data-head-1, .company-data-head-2, .example-head, .even-example-row, .even-company,.even-rates {
     background-color: lightblue;
 }
 
@@ -93,12 +93,16 @@ textarea{
     background-color: whitesmoke;
 }
 
+.grid {
+    text-align: center;
+}
+
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse*/
 .treasury-rates {
-    border: 1px solid black;
     border-collapse: collapse;
 }
+
 
 
 #col-1, #col-2 {
@@ -126,4 +130,12 @@ form {
 
 .link{
     padding-top: 10px;
+}
+
+.category, th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: Bold;
+    background-color: white;
+    padding: 3px;
 }
