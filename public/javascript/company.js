@@ -111,7 +111,7 @@ $( "#company-1" ).submit(function(event) {
         });
 
         row.append($("<td class='company-data-row'>" + key + "</td>"));
-        var financials = ['EBITDA','MarketCapitalization','RevenueTTM','GrossProfitTTM', 'SharesOutstanding'];
+        var financials = ['EBITDA','MarketCapitalization','RevenueTTM','GrossProfitTTM'];
         if(financials.includes(key)) {
             data = formatter.format((data/1000)) + "M";
         }
