@@ -15,6 +15,7 @@
     "start": "node app.js"
   },
   "devDependencies": {
+    "papaparse": "^5.3.2",
     "request-promise": "^4.2.6"
   }
 }

@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars').create({defaultLayout: 'main'})
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+var Papa = require('papaparse');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -25,11 +26,14 @@ app.get('/treasury-rates', function (req, res) {
 });
 
 app.get('/treasury-scraper', function (req, res) {
-    const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/202203?type=daily_treasury_yield_curve&field_tdr_date_value_month=202203&page&_format=csv'
+    const currentDate = new Date();
+    const month = currentDate.getMonth() + 1;
+    const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/20220' + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=20220' + month + '&page&_format=csv'
+    console.log(url);
     rp(url)
-        .then(function (html) {
-            console.log(html);
-            res.send(html);
+        .then(function (csv) {
+            const data = Papa.parse(csv);
+            res.send(data);
         })
         .catch(function (err) {
         })
