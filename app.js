@@ -29,7 +29,6 @@ app.get('/treasury-scraper', function (req, res) {
     const currentDate = new Date();
     const month = currentDate.getMonth() + 1;
     const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/20220' + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=20220' + month + '&page&_format=csv'
-    console.log(url);
     rp(url)
         .then(function (csv) {
             const data = Papa.parse(csv);

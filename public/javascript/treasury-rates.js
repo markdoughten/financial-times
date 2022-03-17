@@ -36,7 +36,6 @@ $( document ).ready(function(){
         type: 'get',
         success: function(data){
             if (data !== 0) {
-                console.log(data.data[0][0]);
                 makeTable(data.data);
             }
         },
