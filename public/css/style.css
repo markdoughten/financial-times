@@ -131,8 +131,10 @@ form {
 }
 
 .category, th {
-    display: table-cell;
-    font-weight: Bold;
-    background-color: white;
-    padding-right: 5px;
+    padding-right: 40px;
+}
+
+.title {
+    background-color: lightblue;
+    font-weight: bold;
 }

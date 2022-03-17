@@ -1,12 +1,12 @@
-var express = require('express');
-var handlebars = require('express-handlebars').create({defaultLayout:'main'});
-var bodyParser = require('body-parser');
-var path = require('path')
-var cors = require('cors')
-var app = express();
+const express = require('express');
+const rp = require('request-promise');
+const handlebars = require('express-handlebars').create({defaultLayout: 'main'});
+const bodyParser = require('body-parser');
+const path = require('path');
+const app = express();
+var Papa = require('papaparse');
 
-app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
@@ -17,37 +17,43 @@ const port = process.env.PORT || 4000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/',function(req,res){
-  res.render('home');
+app.get('/', function (req, res) {
+    res.render('home');
 });
 
 app.get('/treasury-rates', function (req, res) {
-  res.render('treasury-rates');
+    res.render('treasury-rates');
 });
 
-app.get('/companies',function(req,res){
-  res.render('companies');
+app.get('/treasury-scraper', function (req, res) {
+    const currentDate = new Date();
+    const month = currentDate.getMonth() + 1;
+    const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/20220' + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=20220' + month + '&page&_format=csv'
+    console.log(url);
+    rp(url)
+        .then(function (csv) {
+            const data = Papa.parse(csv);
+            res.send(data);
+        })
+        .catch(function (err) {
+        })
 });
 
 
-app.post('/unit-converter',function(req,res){
-  const data = req.body;
-  for(var i = 0; i < data.length; i++){
-    data[i] = (data[i]/28.35).toFixed(2)
-  }
-  res.send(data);
+app.get('/companies', function (req, res) {
+    res.render('companies');
 });
 
-app.use(function(req,res){
-  res.status(404);
-  res.render('404');
+app.use(function (req, res) {
+    res.status(404);
+    res.render('404');
 });
 
-app.use(function(err, req, res, next){
-  console.error(err.stack);
-  res.type('plain/text');
-  res.status(500);
-  res.render('500');
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.type('plain/text');
+    res.status(500);
+    res.render('500');
 });
 
 app.listen(port);
