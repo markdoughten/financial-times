@@ -9,13 +9,11 @@
     "express-handlebars": "^5.3.5",
     "express-session": "^1.11.3",
     "mysql": "^2.8.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "papaparse": "^5.3.2",
+    "request-promise": "^4.2.6"
   },
   "scripts": {
     "start": "node app.js"
-  },
-  "devDependencies": {
-    "papaparse": "^5.3.2",
-    "request-promise": "^4.2.6"
   }
 }
