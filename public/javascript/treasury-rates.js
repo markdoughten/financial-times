@@ -46,9 +46,8 @@ function makeBody(data, keys) {
 //When the page has loaded.
 $( document ).ready(function(){
     //Perform Ajax request.
-    var q = 'https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield';
     $.ajax({
-        url: 'https://shrouded-fortress-16738.herokuapp.com/api?q=' + q,
+        url: '/treasury-scraper',
         type: 'get',
         success: function(data){
             if (data !== 0) {
