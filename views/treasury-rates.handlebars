@@ -15,6 +15,10 @@
             <label><a href=https://www.investopedia.com/terms/t/treasury-yield.asp target="_blank">Source: investopedia.com</a></label>
         </div>
         <!-- Request to return Treasury Rate data-->
+        <form id="monthly-treasury" action=method="POST">
+            <input id="treasury-month" type="month" name="treasury_month">
+            <input type="submit" value="Go">
+        </form>
         <table class="treasury-rates">
         </table>
         <script src="javascript/treasury-rates.js"></script>
