@@ -115,6 +115,7 @@ form {
     padding-bottom: 15px;
     padding-right: 1px;
     display: inline-block;
+
 }
 
 /*Source https://developer.mozilla.org/en-US/docs/Web/CSS/cursor*/
@@ -137,4 +138,8 @@ form {
 .title {
     background-color: lightblue;
     font-weight: bold;
+}
+
+#monthly-treasury {
+    font-family: sans-serif;
 }

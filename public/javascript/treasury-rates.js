@@ -32,11 +32,14 @@ $( document ).ready(function(){
     //Set constraints on the search function
     const currentDate = new Date();
     const month = currentDate.getMonth() + 1;
-    const year = currentDate.getFullYear()
-    const input = year + '-0' + month;
+    const year = currentDate.getFullYear();
+    var input = '';
 
-    if (month >= 10){
-         let input = year + '-' + month;
+    if (month >= 10) {
+        input = year + '-' + month;
+    } 
+    else {
+        input = year + '-0' + month;
     }
 
     $('#treasury-month').attr({

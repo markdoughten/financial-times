@@ -29,14 +29,16 @@ app.get('/treasury-scraper', function (req, res) {
 
     const currentDate = new Date();
     const month = currentDate.getMonth() + 1;
-    const year = currentDate.getFullYear()
-
-    const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/' + year + '0' + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=' + year + '0' + month + '&page&_format=csv';
+    const year = currentDate.getFullYear();
+    var url = '';
 
     if (month >= 10) {
-        const url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/' + year + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=' + year + month + '&page&_format=csv';
-    }
+        url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/' + year + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=' + year + month + '&page&_format=csv';
+    } else {    
+        url = 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/all/' + year + '0' + month + '?type=daily_treasury_yield_curve&field_tdr_date_value_month=' + year + '0' + month + '&page&_format=csv';
 
+    }
+    
     rp(url)
         .then(function (csv) {
             const data = Papa.parse(csv);
