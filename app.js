@@ -41,7 +41,7 @@ app.get('/treasury-scraper', function (req, res) {
     
     rp(url)
         .then(function (csv) {
-            const data = Papa.parse(csv);
+            const data = Papa.parse(csv, {delimiter: ','});
             res.send(data);
         })
         .catch(function (err) {
